@@ -22,6 +22,4 @@ if (!process.env.MONGODB_URL) return console.log("Missing MongoDB URL");
   }
 
 
-
-
 }

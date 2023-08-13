@@ -1,10 +1,7 @@
 import Image from "next/image";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-
 import { profileTabs } from "@/constants";
-
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { fetchUser } from "@/lib/actions/user.actions";
 import ProfileHeader from "@/components/shared/ProfileHeader";
@@ -20,14 +17,14 @@ async function Page({ params }: { params: { id: string } }) {
 const Page = async () => {
     return(
         <section>
-           <ProfileHeader 
-           accountId={userInfo.id}
-           authUserId={user.id}
-           name={userInfo.name}
-           username={userInfo.username}
-           imgUrl={userInfo.image}
-           bio={userInfo.bio}
-           />
+          <ProfileHeader 
+          accountId={userInfo.id}
+          authUserId={user.id}
+          name={userInfo.name}
+          username={userInfo.username}
+          imgUrl={userInfo.image}
+          bio={userInfo.bio}
+          />
 
 <div className='mt-9'>
 <Tabs defaultValue='threads' className='w-full'>
@@ -57,7 +54,7 @@ const Page = async () => {
               value={tab.value}
               className='w-full text-light-1'
             >
-              {/* @ts-ignore */}
+            
               <ThreadsTab
                 currentUserId={user.id}
                 accountId={userInfo.id}

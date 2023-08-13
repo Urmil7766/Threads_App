@@ -5,19 +5,13 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import { fetchThreadById } from "@/lib/actions/thread.actions";
 import Comment from "@/components/forms/Comment";
 
-
-
 async function page({ params }: { params: { id: string } }) {
     if (!params.id) return null;
-
     const user = await currentUser();
     if (!user) return null;
-
     const userInfo = await fetchUser(user.id);
     if (!userInfo?.onboarded) redirect("/onboarding");
-
     const thread = await fetchThreadById(params.id);
-
 return(
     <section className='relative'>
         <div>
@@ -54,9 +48,7 @@ return(
             isComment
           />
         ))}
-
         </div>
-
 
     </section>
 )

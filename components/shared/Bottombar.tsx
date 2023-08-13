@@ -14,7 +14,6 @@ function Bottombar() {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
             pathname === link.route;
-
           return (
             <Link
               href={link.route}
@@ -28,7 +27,6 @@ function Bottombar() {
                 height={16}
                 className='object-contain'
               />
-
 <p className='text-subtle-medium text-light-1 max-sm:hidden'>
                 {link.label.split(/\s+/)[0]}
             </p>
